@@ -17,12 +17,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/docker/docker/runconfig"
+	"github.com/moby/moby/runconfig"
 )
 
 type container struct {
-	Config     runconfig.Config
-	HostConfig runconfig.HostConfig
+	Config     runconfig.DecodeContainerConfig
+	HostConfig runconfig.DecodeHostConfig
 	Name       string            `json:"Name"`
 	Volumes    map[string]string `json:"Volumes"`
 }
